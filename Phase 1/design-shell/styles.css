@@ -1,0 +1,147 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("https://c.pxhere.com/photos/09/b4/grass_green_football_football_field_background_texture_gazongras-656816.jpg!d");
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+#header{
+    background-color: rgb(31, 211, 157);
+    color: rgb(50, 21, 180);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    margin: 30px;
+}
+a:hover{
+    background-color: rgb(195, 0, 255);
+    color: white;
+    font-style: italic;
+}
+
+#footer{
+    background-color: rgb(31, 211, 157);
+    color: rgb(50, 21, 180);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+p{
+    border-style: solid;
+            border-width: auto;
+            border-color: rgb(41, 165, 214);
+            width: auto;
+            height: auto;
+            display: inline-block;
+            background-color: rgb(40, 97, 182);
+            border-radius: 10px;
+}
+
+.redbell{
+    color: red;
+    border-style: solid;
+    border-width: auto;
+    border-color: red;
+    width: 240px;
+    height: auto;
+    background-color: rgb(199, 69, 69);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.imgred{
+    width: 300px;
+    height:200px;
+    float: left;
+}
+
+.reddesc{
+    color: rgb(206, 130, 130);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.greenbell{
+    color: green;
+    border-style: solid;
+    border-width: auto;
+    border-color: green;
+    width: 240px;
+    height: auto;
+    background-color:rgba(58, 194, 58, 0.836);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.imggreen{
+    width:300px;
+    height: 200px;
+}
+
+.greendesc{
+    color: rgba(60, 196, 60, 0.877);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.yellowbell{
+    color: rgb(255, 187, 0);
+    border-style: solid;
+    border-width: auto;
+    border-color: rgb(255, 187, 0);
+    width: 240px;
+    height: auto;
+    background-color: rgba(238, 238, 54, 0.863);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.imgyellow{
+    width:300px;
+    height: 200px;
+}
+
+.yellowdesc{
+    color: rgb(240, 205, 9);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.orangebell{
+    color: orange;
+    border-style: solid;
+    border-width: auto;
+    border-color: orange;
+    width: 250px;
+    height: auto;
+    background-color: rgb(201, 156, 74);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.imgorange{
+    width:300px;
+    height: 200px;
+}
+
+.orangedesc{
+    color: rgb(233, 131, 15);
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
