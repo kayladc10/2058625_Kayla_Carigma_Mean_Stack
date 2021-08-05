@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog · Simply Blogging</title>
+    <script src="simply_js.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+
+    <style>
+        label{
+            display: inline-block;
+            width: 140px;
+            text-align: right;
+        }
+
+        div{
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body style="background: rgba(170, 235, 195, 0.767);">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://image.flaticon.com/icons/png/512/2297/2297928.png" width="30" height="30" alt="">
+            Simply Blogging
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="add_blog.html">Add Blog <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="home.html">Home</a>
+            <a class="nav-item nav-link" href="about_us.html">About Us</a>
+            <a class="nav-item nav-link" href="contacts.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <br/>
+
+      <form id="inputdata">
+        <div class="form-group row">
+          <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="blogtitle" placeholder="Enter blog title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputArticle" class="col-sm-2 col-form-label">Article(s)</label>
+          <div class="col-sm-5">
+            <!--input type="text" class="form-control" id="articles" placeholder="Enter blog article(s)"-->
+            <textarea class="form-control" id="articles" placeholder="Enter blog article(s)"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputImage" class="col-sm-2 col-form-label">Add Image</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="addimage" placeholder="Add blog image URL">
+            </div>
+          </div>
+        <div class="form-group row">
+            <div class="col-sm-5">
+              <input type="button" class="btn btn-info" onclick="addBlogData()" value="Add Blog">
+              <input type="button" class="btn btn-info" onclick="resetFields()" value="Clear Entries">
+            </div>
+
+          </div>
+        </form>
+
+        <br>
+
+        
+    <div id="blogoutput">
+        
+
+    </div>
+
+    <div class="container">
+        <div class="row" id="mainrow">
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" id="imagedisplay" src="..." alt="Pending blog image">
+                <div class="card-body">
+                  <h5 class="card-title" id="titledisplay"></h5>
+                  <p class="card-text" id="articledisplay"></p>
+                  <a href="#" class="btn btn-info">Continue Reading</a>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" id="imagedisplay2" src="..." alt="Pending blog image">
+                <div class="card-body">
+                  <h5 class="card-title" id="titledisplay2"></h5>
+                  <p class="card-text" id="articledisplay2"></p>
+                  <a href="#" class="btn btn-info">Continue Reading</a>
+                </div>
+              </div>
+            
+          </div>
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" id="imagedisplay3" src="..." alt="Pending blog image">
+                <div class="card-body">
+                  <h5 class="card-title" id="titledisplay3"></h5>
+                  <p class="card-text" id="articledisplay3"></p>
+                  <a href="#" class="btn btn-info">Continue Reading</a>
+                </div>
+              </div>
+          </div>
+        </div>
+        <br>
+        <div class="row" id="mainrow2">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" id="imagedisplay4" src="..." alt="Pending blog image">
+                    <div class="card-body">
+                      <h5 class="card-title" id="titledisplay4"></h5>
+                      <p class="card-text" id="articledisplay4"></p>
+                      <a href="#" class="btn btn-info">Continue Reading</a>
+                    </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+    
+</body>
+</html>
