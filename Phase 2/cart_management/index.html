@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="shopping_cart.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Your Shopping Cart Item(s)</span>
+    </nav>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-text">
+            Your Cart Size:
+            <div id="cartsize" style="float:right;margin-left:20px"></div>
+            <img src="https://image.flaticon.com/icons/png/512/879/879815.png" width="30px" height="30px">
+          <!--input type="text" value="Cart Size: " onload="displayCartTotal()"/-->
+        </span>
+        <!--button type="button" class="btn btn-outline-light float-right">Checkout</button-->
+        <a href="checkout.html" class="btn btn-outline-light active float-right" role="button" aria-pressed="true">Checkout</a>
+        <!--button type="button" class="btn btn-light">Checkout</button-->
+    </nav>
+
+    <br/>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://media.gettyimages.com/photos/blueberrynectarine-lattice-pie-photographed-in-washington-dc-picture-id1234473889" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="blueberryname">Lattice Blueberry Pie</h5>
+                  <p class="card-text" id="blueberryprice">$14.00</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="blueberryqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('blueberryprod')" id="blueberryprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('blueberrydel')" id="blueberrydel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5279850.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="cherryname">Cherry Pie</h5>
+                  <p class="card-text" id="cherryprice">$13.75</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="cherryqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('cherryprod')" id="cherryprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('cherrydel')" id="cherrydel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://keto-mojo.com/wp-content/uploads/2021/05/Keto-Lemon-Curd-Tart.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="lemonname">Lemon Curd Pie</h5>
+                  <p class="card-text" id="lemonprice">$16.00</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="lemonqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('lemonprod')" id="lemonprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('lemondel')" id="lemondel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <br/>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Shoofly-Chocolate-Pie_EXPS_PPP19_39505_C04_03_2b.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="shooflyname">Shoo Fly Pie</h5>
+                  <p class="card-text" id="shooflyprice">$12.50</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="shooflyqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('shooflyprod')" id="shooflyprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('shooflydel')" id="shooflydel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://www.thespruceeats.com/thmb/H0gpDgE-NO7fo1JEmCn4rurd5Co=/3583x2687/smart/filters:no_upscale()/peach-pie-on-wood-rustic-background-with-peaches-157675322-581417a33df78cc2e88727cb.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="peachname">Peach Pie</h5>
+                  <p class="card-text" id="peachprice">$15.50</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="peachqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('peachprod')" id="peachprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('peachdel')" id="peachdel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://img.taste.com.au/xNRMNqk6/taste/2016/11/pumpkin-pie-88763-1.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="pumpkinname">Pumpkin Pie</h5>
+                  <p class="card-text" id="pumpkinprice">$11.30</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="pumpkinqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('pumpkinprod')" id="pumpkinprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('pumpkindel')" id="pumpkindel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <br/>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/17607-caramel-apple-pie-760x580.jpg?ext=.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="applename">Apple Pie</h5>
+                  <p class="card-text" id="appleprice">$12.75</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="appleqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('appleprod')" id="appleprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('appledel')" id="appledel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://static01.nyt.com/images/2013/11/19/dining/chocolatepecanpie/chocolatepecanpie-articleLarge.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="pecanname">Chocolate Pecan Pie</h5>
+                  <p class="card-text" id="pecanprice">$17.80</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="pecanqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('pecanprod')" id="pecanprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('pecandel')" id="pecandel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm text-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" width="300px" height="210px" src="https://kimberlycstarr.com/wp-content/uploads/2019/02/blackberry-pie.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title" id="blackberryname">Blackberry Pie</h5>
+                  <p class="card-text" id="blackberryprice">$14.35</p>
+                  Quantity: <input type="text" maxlength="4" size="4" id="blackberryqty"/><br/><br/>
+                  <a href="#" class="btn btn-success" onclick="addToCart('blackberryprod')" id="blackberryprod">Add</a>
+                  <a href="#" class="btn btn-dark disabled" onclick="deleteProduct('blackberrydel')" id="blackberrydel" aria-disabled="true">Delete</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <br/>
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-text">
+            All Time Pie Company © 2021 
+        </span>
+    </nav>
+
+</body>
+</html>
