@@ -80,7 +80,7 @@ function addToCart(id) {
     localStorage.setItem("productArray", JSON.stringify(productAdd));
     //CART SIZE EQUAL TO ARRAY LENGTH
     document.getElementById("cartsize").innerHTML = productAdd.length.toString();
-    console.log("Test product array: with name is " + productAdd[0].name);
+    //console.log("Test product array: with name is " + productAdd[0].name)
     //console.log("Test index number: " + productAdd[productNumber].numIndex)
 }
 function displayTable() {
