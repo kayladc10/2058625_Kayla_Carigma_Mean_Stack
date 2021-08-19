@@ -1,0 +1,15 @@
+<form [formGroup]="myForm" (ngSubmit)="submit()" style="margin:10px;">
+    <div *ngFor="let q of examArr; let i = index;trackBy:trackByIdx">
+        <p>{{q.question}}</p>
+        <input type="radio" formControlName={{q.question}} [(ngModel)]="testRadio[i]" value={{q.ans1}} id="a1"/> {{q.ans1}}<br/>
+        <input type="radio" formControlName={{q.question}} [(ngModel)]="testRadio[i]" value={{q.ans2}} id="a2"/> {{q.ans2}}<br/>
+        <input type="radio" formControlName={{q.question}} [(ngModel)]="testRadio[i]" value={{q.ans3}} id="a3"/> {{q.ans3}}<br/>
+    <p *ngIf="userAnsFlag" id="userAns" style="color: blue">Your Answer: {{testRadio[i]}} </p>
+    <p *ngIf="incorrectAnsFlag" id="incorrect" style="color:red">Your Answer: {{testRadio[i]}}</p>
+    <p *ngIf="correctAnsFlag" id="correct" style="color:green">Correct Answer: {{resultsArr[i].correctAns}}</p>
+    <br/>
+    </div>
+    <p *ngIf="resultFlag">Your Exam Results: {{examResults}}/15 -- {{resultStr}}</p>
+    <button mat-stroked-button (click)="countAnswers()" style="background-color: rgb(159, 113, 204); color: seashell">Submit</button> 
+</form><br/>
+
