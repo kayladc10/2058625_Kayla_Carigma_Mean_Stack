@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .message{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: small;
+        }
+    </style>
+    <title>Chat Box</title>
+</head>
+<body>
+    <h2>Chat Box (socket.io programming)</h2>
+    <!--CREATE DYNAMIC RESPONSES IN CHATBOX-->
+    <div class="chat-popup" id="myForm">
+        <form action="" class="form-container" id="form">
+          <h2>User Chat</h2>
+            <label><b>Name</b></label>
+            <br/>
+            <input type="text" name="username" id="uname" required/>
+            <br/>
+            <label for=""><b>Message</b></label>
+            <br/>
+            <textarea placeholder="Type message.." name="msg" id="input" required></textarea>
+            <br/>
+            <input type="button" class="btn" value="Send" onclick="info()"/>
+        </form>
+      </div>
+      <div class="container">
+          <h2>Chat With Server: </h2>
+          <ul class="message" id="messages"></ul>
+      </div>
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script type="text/JavaScript">          
+          var socket = io();
+  
+          let messages = document.getElementById('messages');
+          let form = document.getElementById('form');
+          let input = document.getElementById('input');
+          let name = document.getElementById('uname');
+
+          info=()=>{
+              let input = document.getElementById("input").value;
+              let name = document.getElementById("uname").value;
+              socket.emit("chat message", `${name}: `+ input);
+          }
+  
+          // displays message on the client side chat area
+          socket.on('chat message', function(msg) {
+              var item = document.createElement('li');
+              item.textContent = msg;
+              messages.appendChild(item);
+              window.scrollTo(0, document.body.scrollHeight);
+          });
+  
+          // sending message to the server side 
+          socket.emit("obj","Hello Server I am Web Socket Client");
+          
+          // receive message from server side
+          socket.on("obj1",(msg)=> {
+              console.log(msg);
+          })
+
+          // display server message in chatbox
+          socket.on("serverMessage", function(msg) {
+            let item = document.createElement('li');
+              item.textContent = msg;
+              messages.appendChild(item);
+              window.scrollTo(0, document.body.scrollHeight);
+          })
+  
+      </script>
+</body>
+</html>
