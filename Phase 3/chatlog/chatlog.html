@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Log</title>
+</head>
+<body>
+    <!--CREATE A CHAT BETWEEN CLIENT AND SERVER AND THEN STORE THE CHAT TO MONGODB DATABASE-->
+    <h2>Chat Log with Socket.io</h2>
+    <form action="chatMongoDB" method="POST">
+        <label>Name</label>
+        <br/>
+        <input type="text" name="chatname" id="name"/>
+        <br/>
+        <label>Message</label>
+        <br/>
+        <textarea placeholder="Type message.." name="chatmessage" id="input"></textarea>
+        <br/>
+        <input type="button" class="btn" value="Send" onclick="info()"/>
+    </form>
+
+    <div class="container">
+        <h2>Chat With Server: </h2>
+        <ul class="message" id="chatmessages"></ul>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">          
+        let socket = io();
+
+        let messages = document.getElementById('chatmessages');
+        let input = document.getElementById('input');
+        let name = document.getElementById('name');
+
+        info=()=>{
+            let message = document.getElementById("input").value;
+            let name = document.getElementById("name").value;
+            socket.emit("clientEvent", {clientname:name,clientmessage:message});
+            socket.emit("clientMessage", message);
+        }
+
+        // CLIENT SIDE CHAT MESSAGE
+        socket.on('clientMessage', function(msg) {
+            let item = document.createElement('li');
+            item.textContent = msg;
+            messages.appendChild(item);
+        });
+
+        // sending message from client to the server side 
+        socket.emit("obj","To: Server, From: Socket.io client");
+        
+        // receive message from server side (NOT INPUT)
+        socket.on("obj1",(msg)=> {
+            console.log(msg);
+        })
+
+        // display server message in chatbox (INPUT)
+        socket.on("serverMessage", function(msg) {
+          let item = document.createElement('li');
+            item.textContent = msg;
+            messages.appendChild(item);
+        })
+
+    </script>
+</body>
+</html>
